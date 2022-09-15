@@ -43,6 +43,9 @@ public class AdminsRestController {
         if (user.getPassword().equals("")) {
             user.setPassword(usersService.findOne(id).getPassword());
         }
+        if (user.getRoles().size() == 0) {
+            user.setRoles(usersService.findOne(id).getRoles());
+        }
         usersService.update(id, user);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -194,11 +194,5 @@ newUser.addEventListener('submit', (e) => {
         .then(data => showUsersTable(data))
         .catch(error => console.log(error))
         .then(refreshUsersTable)
-    newUsersTable.show()
-    name.value = ''
-    lastName.value = ''
-    age.value = ''
-    login.value = ''
-    password.value = ''
-    roles.value = ''
+    document.getElementById('nav-users-tab').click()
 })
